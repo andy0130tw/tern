@@ -11,19 +11,28 @@
     "url": "git://github.com/ternjs/tern.git"
   },
   "scripts": {
-    "test": "node ./bin/test"
+    "test": "node ./bin/test",
+    "build-doc": "rollup -c"
   },
   "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.12.15",
     "acorn": "^6.0.0",
-    "acorn-walk": "^6.0.0",
     "acorn-loose": "^6.0.0",
+    "acorn-walk": "^6.0.0",
     "enhanced-resolve": "^2.2.2",
     "glob": "^7.1.1",
     "minimatch": "^3.0.3",
     "resolve-from": "2.0.0"
   },
   "devDependencies": {
-    "codemirror": "git://github.com/codemirror/CodeMirror.git"
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "@rollup/plugin-babel": "^5.2.3",
+    "@rollup/plugin-commonjs": "^17.1.0",
+    "@rollup/plugin-node-resolve": "^11.1.1",
+    "codemirror": "git://github.com/codemirror/CodeMirror.git",
+    "esm": "^3.2.25",
+    "rollup": "^2.38.5"
   },
   "blint": {
     "allowedGlobals": [
