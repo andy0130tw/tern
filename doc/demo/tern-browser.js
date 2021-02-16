@@ -7322,8 +7322,8 @@
         }
       }
       var result = descendProps(base, path.split(".")); // Uncomment this to get feedback on your poorly written .json files
-      // if (result == infer.ANull) console.error("bad path: " + origPath + " (" + cx.curOrigin + ")")
 
+      if (result == infer.ANull) console.error("bad path: " + origPath + " (" + cx.curOrigin + ")");
       cx.paths[origPath] = result == infer.ANull ? null : result;
       return result;
     };
@@ -11778,11 +11778,12 @@
   function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-  var tern$1 = _objectSpread(_objectSpread(_objectSpread({}, _tern), infer), {}, {
-    comment: comment$1,
-    def: def$1,
+  var tern$1 = _objectSpread(_objectSpread({
     signal: signal$1
-  });
+  }, _tern), {}, {
+    def: def$1,
+    comment: comment$1
+  }, infer);
   var acorn$1 = _objectSpread(_objectSpread({}, _acorn), {}, {
     loose: acorn_loose,
     walk: acorn_walk
